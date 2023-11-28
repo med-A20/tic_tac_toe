@@ -12,7 +12,7 @@ function App() {
   const chooseSquare = (square) => {
     setBoard(
       board.map((val, idx) => {
-        if (square == idx && val == "" && !winner) {
+        if (square === idx && val === "" && !winner) {
           setCount(count + 1);
           return player;
         }
@@ -28,8 +28,8 @@ function App() {
     patterns.forEach((pattern) => {
       if (
         notContains(board, pattern) &&
-        board[pattern[0]] == board[pattern[1]] &&
-        board[pattern[1]] == board[pattern[2]]
+        board[pattern[0]] === board[pattern[1]] &&
+        board[pattern[1]] === board[pattern[2]]
       ) {
         const player = board[pattern[0]];
         console.log(player + " is the winner");
